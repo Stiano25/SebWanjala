@@ -1,0 +1,127 @@
+.video-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9998;
+}
+
+.video-modal-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-width: 95vw;
+  max-height: 85vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal-container {
+  width: 100%;
+  position: relative;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -32px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--color-text-primary);
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  z-index: 10000;
+}
+
+.video-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.video-modal-content {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.video-modal-player {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+  min-height: 200px;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.video-error {
+  padding: var(--spacing-lg);
+  color: var(--color-text-secondary);
+  text-align: center;
+  background: var(--color-surface-elevated);
+  border-radius: var(--radius);
+  margin: var(--spacing-md);
+  font-size: 0.875rem;
+}
+
+.video-modal-title {
+  padding: var(--spacing-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .video-modal-wrapper {
+    max-width: 90vw;
+    max-width: 1200px;
+    max-height: 90vh;
+  }
+  
+  .video-modal-close {
+    top: -40px;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    background: none;
+  }
+  
+  .video-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .video-modal-content {
+    border-radius: var(--radius-lg);
+  }
+  
+  .video-modal-player {
+    min-height: 300px;
+    max-height: 80vh;
+  }
+  
+  .video-error {
+    padding: var(--spacing-xl);
+    font-size: 1rem;
+  }
+  
+  .video-modal-title {
+    padding: var(--spacing-md);
+    font-size: 1.25rem;
+  }
+}
+
