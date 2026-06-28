@@ -17,29 +17,29 @@ const Home = () => {
         <HomeStage />
       </Suspense>
 
-      <section className="home-below container page-section">
+      <section className="home-below container">
         <div className="home-below__grid">
-          <motion.article className="home-below__card" {...fadeUp}>
+          <motion.article className="home-below__panel" {...fadeUp}>
             <p className="section-label">Approach</p>
-            <h2 className="section-title">
-              Design intent, <span className="section-title--accent">shipped in code</span>
+            <h2 className="home-below__title">
+              Design intent, <span className="home-below__title-mark">shipped in code</span>
             </h2>
-            <p className="section-lead">
-              Product UI, tools, and visual design — same standard everywhere: clear hierarchy,
-              considered motion, interfaces that respect the person using them.
+            <p className="home-below__lead">
+              From Somovibe to Flytrails — I build products end to end: design systems, React
+              frontends, Node backends, and the details that make interfaces feel intentional.
             </p>
             <Link to="/process" className="home-below__link">
               How I work →
             </Link>
           </motion.article>
 
-          <motion.article className="home-below__card home-below__card--dark" {...fadeUp}>
+          <motion.article className="home-below__panel home-below__panel--ink" {...fadeUp}>
             <p className="section-label section-label--light">Writing</p>
-            <h2 className="section-title section-title--light">Notes from the build</h2>
+            <h2 className="home-below__title home-below__title--light">Notes from the build</h2>
             <ul className="home-posts">
               {previewPosts.map((post) => (
                 <li key={post.slug}>
-                  <Link to={`/blog/${post.slug}`} className="home-post-card home-post-card--dark">
+                  <Link to={`/blog/${post.slug}`} className="home-post-card">
                     <time className="home-post-card__date">{post.date}</time>
                     <h3>{post.title}</h3>
                   </Link>
@@ -53,8 +53,17 @@ const Home = () => {
         </div>
 
         <motion.div className="home-below__cta" {...fadeUp}>
-          <p>{site.available ? 'Available for freelance & collaborations' : 'Currently booked'}</p>
-          <Link to="/contact" className="btn">Start a conversation</Link>
+          <div>
+            <p className="home-below__cta-label">Next step</p>
+            <p className="home-below__cta-text">
+              {site.available
+                ? 'Available for freelance & collaborations'
+                : 'Currently booked — still happy to chat'}
+            </p>
+          </div>
+          <Link to="/contact" className="btn home-below__cta-btn">
+            Start a conversation
+          </Link>
         </motion.div>
       </section>
     </div>

@@ -14,7 +14,7 @@ const SkillIcons = ({ skills, size = 'md', className = '' }) => {
       {skills.map((skill) => {
         const Icon = getSkillIcon(skill) ?? HelpCircle
         const lucide = getSkillIcon(skill) ? isLucideIcon(skill) : true
-        const brandColor = lucide ? null : getSkillBrandColor(skill)
+        const brandColor = getSkillBrandColor(skill)
 
         return (
           <li key={skill}>

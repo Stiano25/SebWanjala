@@ -20,10 +20,10 @@ export const site = {
     'TypeScript',
     'Figma',
     'CSS',
-    'UI Design',
+    'Node.js',
     'Framer Motion',
-    'Vite',
-    'Responsive Design',
+    'Rive',
+    'Photoshop',
     'Prototyping',
   ],
   marqueeSkills: [

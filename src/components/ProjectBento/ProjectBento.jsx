@@ -19,37 +19,61 @@ const ProjectBento = ({ projects, showHeader = true }) => {
       )}
 
       <div className="bento">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.slug}
-            className={[
-              'bento__item',
-              `bento__item--${project.bentoSize}`,
-              project.highlight ? 'bento__item--highlight' : '',
-            ]
-              .filter(Boolean)
-              .join(' ')}
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.45, delay: index * 0.04 }}
-          >
-            <Link to={`/work/${project.slug}`} className="bento__card">
-              <div className="bento__media">
-                <img src={project.thumbnail} alt={project.title} loading="lazy" />
-                <span className="bento__category">{project.category}</span>
-                {project.highlight && <span className="bento__featured">Featured</span>}
-              </div>
-              <div className="bento__body">
-                <h2>{project.title}</h2>
-                <p>{project.hook}</p>
-                <div className="bento__tags">
-                  <SkillIcons skills={project.stack.slice(0, 4)} size="sm" />
+        {projects.map((project, index) => {
+          const isFeatured = Boolean(project.highlight)
+          const fitContain = project.thumbnailFit === 'contain'
+
+          return (
+            <motion.div
+              key={project.slug}
+              className={[
+                'bento__item',
+                isFeatured ? 'bento__item--featured' : 'bento__item--standard',
+              ].join(' ')}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: index * 0.03 }}
+            >
+              <Link
+                to={`/work/${project.slug}`}
+                className={`bento__card${isFeatured ? ' bento__card--featured' : ''}`}
+              >
+                <div
+                  className={[
+                    'bento__media',
+                    fitContain ? 'bento__media--contain' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                  style={project.thumbnailBg ? { background: project.thumbnailBg } : undefined}
+                >
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    loading="lazy"
+                    style={
+                      project.thumbnailPosition
+                        ? { objectPosition: project.thumbnailPosition }
+                        : undefined
+                    }
+                  />
+                  <div className="bento__media-meta">
+                    <span className="bento__category">{project.category}</span>
+                    {isFeatured && <span className="bento__featured">Featured</span>}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+                <div className="bento__body">
+                  <h2>{project.title}</h2>
+                  <p>{project.hook}</p>
+                <div className="bento__tags">
+                  <SkillIcons skills={project.stack} size="sm" className="skill-icons--color-at-rest" />
+                </div>
+                </div>
+              </Link>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )
