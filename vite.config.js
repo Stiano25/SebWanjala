@@ -5,7 +5,17 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
-  }
+    open: true,
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          motion: ['framer-motion'],
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          icons: ['react-icons/si', 'lucide-react'],
+        },
+      },
+    },
+  },
 })
-

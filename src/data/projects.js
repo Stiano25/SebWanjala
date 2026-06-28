@@ -1,0 +1,206 @@
+export const projects = [
+  {
+    slug: 'somovibe',
+    title: 'Somovibe',
+    category: 'Education',
+    featured: true,
+    highlight: true,
+    bentoSize: 'large',
+    thumbnail: '/images/somovibe.svg',
+    externalUrl: 'https://somovibe.com',
+    stack: ['React', 'TypeScript', 'UI Design', 'CSS'],
+    role: 'Design & frontend development',
+    year: '2025',
+    hook: 'Kenya\'s CBC learning marketplace — upload notes, share your link, earn on every sale.',
+    summary:
+      'Somovibe connects CBC teachers and students across Kenya. Teachers upload curriculum-aligned materials and earn 75% commission; students browse, pay via M-Pesa, and download instantly.',
+    story:
+      'Parents across Kenya are actively searching for quality CBC notes — Somovibe gives teachers a platform to monetize that demand. I helped shape a product that makes the loop simple: register, upload, sell, earn. M-Pesa-native payments, role-based flows for teachers and students, and a interface built for trust at first glance.',
+    problem:
+      'Teachers create valuable CBC content but lack a reliable way to reach buyers and get paid. Students struggle to find verified, curriculum-aligned materials.',
+    approach:
+      'Mobile-first flows, clear role selection, and conversion-focused landing pages. M-Pesa STK Push integrated for frictionless Kenyan payments. Content verification messaging built into the UX.',
+    outcome:
+      'A live platform at somovibe.com — teachers earning from their notes, students accessing materials on demand.',
+    gallery: ['/images/somovibe.svg'],
+    nextSlug: 'flytrails-travels',
+  },
+  {
+    slug: 'flytrails-travels',
+    title: 'Flytrails Travels',
+    category: 'Travel',
+    featured: true,
+    bentoSize: 'medium',
+    thumbnail: '/images/flytrails-travels.svg',
+    externalUrl: 'https://flytrailstravels.com',
+    stack: ['React', 'JavaScript', 'UI Design', 'Responsive Design'],
+    role: 'Design & frontend development',
+    year: '2025',
+    hook: 'Adventure travel across Kenya and East Africa — hikes, safaris, and curated group trips.',
+    summary:
+      'A travel platform for Flytrails — from Mt Kenya to Kilimanjaro, with activity-led discovery, membership tiers, and WhatsApp-first booking support.',
+    story:
+      'Flytrails needed a site that feels like the trips themselves: adventurous, trustworthy, and human. I built a destination-first experience — pick a vibe, browse handpicked trips, explore accommodations and gallery moments, and join a membership community without corporate travel clichés.',
+    problem:
+      'Travelers want authentic East African adventures but wade through generic booking sites with stock photos and opaque pricing.',
+    approach:
+      'Activity-led navigation, social proof up front, and clear CTAs for custom trips and WhatsApp support. Membership tiers presented as a community ladder, not a sales funnel.',
+    outcome:
+      'A live site at flytrailstravels.com showcasing destinations, trips, stays, and member programs for a Kenya-based travel team.',
+    gallery: ['/images/flytrails-travels.svg'],
+    nextSlug: 'srannalifamily',
+  },
+  {
+    slug: 'srannalifamily',
+    title: 'Srannali Family',
+    category: 'Memorial',
+    featured: true,
+    bentoSize: 'medium',
+    thumbnail: '/images/srannalifamily.svg',
+    externalUrl: 'https://srannalifamily.com',
+    stack: ['React', 'Visual Design', 'Layout', 'Branding'],
+    role: 'Design & frontend development',
+    year: '2025',
+    hook: 'An official family website preserving the testimony of Sister Anna Ali.',
+    summary:
+      'A dignified memorial site for Sister Anna Ali (Anna Hadija Ali) — sharing her story through the voices of her parents and siblings.',
+    story:
+      'Some projects demand restraint over flair. Srannalifamily.com exists to honor a life and preserve testimony for family and community. The design prioritizes clarity, reverence, and readability — letting the story lead without visual noise.',
+    problem:
+      'A family needed a permanent, respectful home for Sister Anna Ali\'s testimony — accessible to relatives and visitors worldwide.',
+    approach:
+      'Editorial typography, calm palette, and a focused narrative structure. Navigation stays minimal so attention remains on the testimony and family accounts.',
+    outcome:
+      'A live memorial site at srannalifamily.com — a lasting digital archive for the Srannali family.',
+    gallery: ['/images/srannalifamily.svg'],
+    nextSlug: 'umewatch',
+  },
+  {
+    slug: 'umewatch',
+    title: 'Umewatch',
+    category: 'Platform',
+    featured: true,
+    bentoSize: 'medium',
+    thumbnail: '/images/UmewatchHii.png',
+    externalUrl: null,
+    stack: ['React', 'UI Design', 'CSS', 'Prototyping'],
+    role: 'Design & frontend development',
+    year: '2024',
+    hook: 'A platform built around a clear job — details coming soon.',
+    summary:
+      'Umewatch is part of a wider body of work spanning platforms, tools, and interfaces. This case study will expand as the project narrative is finalized.',
+    story:
+      'This project represents the kind of end-to-end work I take on regularly: shaping the experience in design, then carrying that intent through to a production frontend.',
+    problem: 'Placeholder — replace with the real problem statement when ready.',
+    approach: 'Placeholder — replace with your process, stack decisions, and design rationale.',
+    outcome: 'Placeholder — replace with outcomes, launch status, or metrics.',
+    gallery: ['/images/UmewatchHii.png'],
+    nextSlug: 'file-compressor',
+  },
+  {
+    slug: 'file-compressor',
+    title: 'File Compressor',
+    category: 'Web Tool',
+    featured: true,
+    bentoSize: 'small',
+    thumbnail: '/images/filecompressor.png',
+    externalUrl: 'https://filecompressor-beta.vercel.app/',
+    stack: ['React', 'Vite', 'JavaScript', 'CSS'],
+    role: 'Solo builder',
+    year: '2024',
+    hook: 'Shrink files. Keep quality. No nonsense.',
+    summary:
+      'A fast compression tool for people who just need results — students submitting assignments, creators uploading assets, anyone on a slow connection.',
+    story:
+      'I built this because I was tired of bloated compressor sites wrapped in ads and dark patterns. The story here is restraint: drop a file, see the savings, download. Every pixel serves that loop.',
+    problem: 'Large files block uploads, slow sharing, and frustrate users on limited bandwidth.',
+    approach: 'Single-page flow, clear progress states, honest feedback when compression limits are hit.',
+    outcome: 'A lean tool deployed on Vercel — proof that utility software can still feel considered.',
+    gallery: ['/images/filecompressor.png'],
+    nextSlug: 'design-portfolio',
+  },
+  {
+    slug: 'design-portfolio',
+    title: 'Design Portfolio',
+    category: 'Design',
+    featured: true,
+    bentoSize: 'small',
+    thumbnail: '/images/Design%20Portfolio.jpg',
+    externalUrl: 'https://stiano369.vercel.app/',
+    stack: ['Figma', 'Visual Design', 'Branding', 'Layout'],
+    role: 'Visual design',
+    year: '2023',
+    hook: 'Where my eye for layout and narrative first found its voice.',
+    summary:
+      'A curated collection of graphic design work — posters, brand explorations, and visual storytelling across mediums.',
+    story:
+      'Before I called myself a developer, I was the person obsessing over grids and type. This portfolio is the thread that still runs through everything I build: structure, contrast, and a story in every frame.',
+    problem: 'Scattered design work needed a home that felt intentional, not like a dump folder.',
+    approach: 'Editorial pacing, bold typography, and category rhythm that rewards scrolling.',
+    outcome: 'A standalone design identity that complements my development work — two sides of the same craft.',
+    gallery: ['/images/Design%20Portfolio.jpg'],
+    nextSlug: 'eduvibe',
+  },
+  {
+    slug: 'eduvibe',
+    title: 'Eduvibe',
+    category: 'Education',
+    featured: true,
+    bentoSize: 'medium',
+    thumbnail: '/images/Eduvibe.png',
+    videoUrl: '/videos/EduvibeProject.mp4',
+    externalUrl: null,
+    stack: ['React', 'Figma', 'CSS', 'Framer Motion'],
+    role: 'Design & frontend development',
+    year: '2024',
+    hook: 'A learning platform that treats curiosity like a game — not a chore.',
+    summary:
+      'A kids learning platform focused on intuitive UX and interactions that keep young learners engaged.',
+    story:
+      'The journey started in conversations with parents and teachers who were tired of apps that looked colorful but felt hollow. I mapped real learning flows — onboarding a child, tracking progress, celebrating small wins — and designed each moment to feel warm, legible, and alive. Then I built it in React, obsessively tuning motion and spacing until the interface felt as playful as the lessons inside it.',
+    problem:
+      'Children disengage when educational apps overwhelm them with clutter or punish mistakes. Parents need visibility without micromanaging.',
+    approach:
+      'I prototyped in Figma first, testing hierarchy with real lesson content. Bright surfaces, generous touch targets, and motion that guides — never distracts. The frontend prioritizes performance on mid-range phones.',
+    outcome:
+      'A cohesive learning experience with intuitive navigation, delightful micro-interactions, and a visual language kids want to return to.',
+    gallery: ['/images/Eduvibe.png'],
+    nextSlug: 'kilymo',
+  },
+  {
+    slug: 'kilymo',
+    title: 'Kilymo',
+    category: 'Agriculture',
+    featured: true,
+    bentoSize: 'medium',
+    thumbnail: '/images/Kilymo.png',
+    pdfUrl: '/documents/Kilymo.pdf',
+    externalUrl: null,
+    stack: ['React', 'UI Design', 'User Research', 'Prototyping'],
+    role: 'Product design & frontend',
+    year: '2024',
+    hook: 'Connecting farmers to the services they need — without the runaround.',
+    summary:
+      'A farmers platform linking agricultural service providers with local farmers — practical, mobile-first, built for real-world use.',
+    story:
+      'Agriculture runs on relationships and timing. I listened to how people actually coordinate in the field, then designed flows that respect spotty connectivity, thumb-first interaction, and low patience for corporate fluff.',
+    problem:
+      'Farmers and service providers operate in fragmented networks. Information travels by word of mouth; opportunities get missed.',
+    approach:
+      'Mobile-first layouts, high-contrast type for outdoor glare, and category-driven discovery instead of feature bloat. Every screen answers one question clearly.',
+    outcome:
+      'A platform concept that streamlines connections across the agricultural community — designed to scale from local pilots to regional reach.',
+    gallery: ['/images/Kilymo.png'],
+    nextSlug: 'somovibe',
+  },
+]
+
+export const getProjectBySlug = (slug) => projects.find((p) => p.slug === slug)
+
+export const getFeaturedProjects = () => projects.filter((p) => p.featured)
+
+export const getNextProject = (slug) => {
+  const current = projects.find((p) => p.slug === slug)
+  if (!current?.nextSlug) return null
+  return projects.find((p) => p.slug === current.nextSlug)
+}

@@ -1,0 +1,36 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+}
+
+.layout::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle, rgba(10, 10, 10, 0.09) 1px, transparent 1px),
+    linear-gradient(rgba(10, 10, 10, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center center;
+}
+
+.layout::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 255, 255, 0.85), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(10, 10, 10, 0.03), transparent 50%);
+}
+
+.layout-main {
+  flex: 1;
+}

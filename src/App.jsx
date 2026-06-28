@@ -1,60 +1,33 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import LoadingScreen from './components/LoadingScreen'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainLayout from './layouts/MainLayout'
+import Home from './pages/Home'
+import Work from './pages/Work'
+import CaseStudy from './pages/CaseStudy'
+import About from './pages/About'
+import Process from './pages/Process'
+import Experience from './pages/Experience'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
+import Contact from './pages/Contact'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [assetsLoaded, setAssetsLoaded] = useState(false)
-
-  useEffect(() => {
-    // Simulate asset loading (videos, images, etc.)
-    const loadAssets = async () => {
-      // In a real scenario, you'd preload actual assets here
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      setAssetsLoaded(true)
-    }
-
-    loadAssets()
-  }, [])
-
-  useEffect(() => {
-    if (assetsLoaded) {
-      const timer = setTimeout(() => {
-        setIsLoading(false)
-      }, 500)
-      return () => clearTimeout(timer)
-    }
-  }, [assetsLoaded])
-
   return (
-    <div className="App">
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <LoadingScreen key="loading" />
-        ) : (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Header />
-            <Hero />
-            <About />
-            <Projects />
-            <Contact />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="work" element={<Work />} />
+          <Route path="work/:slug" element={<CaseStudy />} />
+          <Route path="about" element={<About />} />
+          <Route path="process" element={<Process />} />
+          <Route path="experience" element={<Experience />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
 export default App
-

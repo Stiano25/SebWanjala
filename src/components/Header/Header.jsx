@@ -1,63 +1,62 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 
+const navItems = [
+  { label: 'Work', path: '/work' },
+  { label: 'About', path: '/about' },
+  { label: 'Process', path: '/process' },
+  { label: 'Experience', path: '/experience' },
+  { label: 'Writing', path: '/blog' },
+  { label: 'Contact', path: '/contact' },
+]
+
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
 
   return (
-    <motion.header
-      className={`header ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <nav className="nav">
-        <motion.div
-          className="logo"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => scrollToSection('hero')}
+    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+      <div className="header__inner container">
+        <Link to="/" className="header__logo">
+          <span className="header__logo-mark">SW</span>
+          <span className="header__logo-sub">Wanjala</span>
+        </Link>
+
+        <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`header__link ${location.pathname === item.path || location.pathname.startsWith(item.path + '/') ? 'header__link--active' : ''}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <button
+          className={`header__menu-btn ${menuOpen ? 'header__menu-btn--open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
-          <span className="logo-text">SW</span>
-        </motion.div>
-        
-        <ul className="nav-links">
-          <li>
-            <button onClick={() => scrollToSection('about')} className="nav-link">
-              About
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection('projects')} className="nav-link">
-              Projects
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">
-              Contact
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </motion.header>
+          <span />
+          <span />
+        </button>
+      </div>
+    </header>
   )
 }
 
 export default Header
-

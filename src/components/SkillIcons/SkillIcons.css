@@ -1,0 +1,142 @@
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.skill-icons__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  color: var(--color-ink);
+  cursor: default;
+  transition: var(--transition);
+}
+
+.skill-icons__item:hover,
+.skill-icons__item:focus-within {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.18);
+}
+
+.skill-icons__item:hover .skill-icons__glyph,
+.skill-icons__item:focus-within .skill-icons__glyph {
+  color: var(--color-surface);
+}
+
+.skill-icons__glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+.skill-icons__glyph--brand {
+  color: var(--skill-brand);
+}
+
+.skill-icons__glyph svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.skill-icons__tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 0.25rem 0.5rem;
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.skill-icons__item:hover .skill-icons__tooltip,
+.skill-icons__item:focus-within .skill-icons__tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.skill-icons--sm .skill-icons__item {
+  width: 36px;
+  height: 36px;
+}
+
+.skill-icons--sm .skill-icons__glyph {
+  width: 18px;
+  height: 18px;
+}
+
+.skill-icons--lg .skill-icons__item {
+  width: 52px;
+  height: 52px;
+}
+
+.skill-icons--lg .skill-icons__glyph {
+  width: 26px;
+  height: 26px;
+}
+
+.skill-icons--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .skill-icons--grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Toolkit: monochrome at rest, brand colors on hover */
+.skill-icons--brand-reveal .skill-icons__item {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-surface);
+}
+
+.skill-icons--brand-reveal .skill-icons__glyph,
+.skill-icons--brand-reveal .skill-icons__glyph--brand {
+  color: var(--color-surface);
+}
+
+.skill-icons--brand-reveal .skill-icons__item:hover,
+.skill-icons--brand-reveal .skill-icons__item:focus-within {
+  background: var(--color-surface);
+  border-color: var(--color-border-strong);
+  color: var(--color-ink);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.12);
+}
+
+.skill-icons--brand-reveal .skill-icons__item:hover .skill-icons__glyph--brand,
+.skill-icons--brand-reveal .skill-icons__item:focus-within .skill-icons__glyph--brand {
+  color: var(--skill-brand);
+}
+
+.skill-icons--brand-reveal .skill-icons__item:hover .skill-icons__glyph:not(.skill-icons__glyph--brand),
+.skill-icons--brand-reveal .skill-icons__item:focus-within .skill-icons__glyph:not(.skill-icons__glyph--brand) {
+  color: var(--color-ink);
+}
