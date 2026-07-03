@@ -3,6 +3,8 @@ import PageLayout from '../components/PageLayout/PageLayout'
 import { site } from '../data/site'
 import './Contact.css'
 
+const portfolioHost = site.links.portfolio?.replace(/^https?:\/\//, '') ?? ''
+
 const Contact = () => {
   const header = (
     <motion.header
@@ -51,9 +53,22 @@ const Contact = () => {
           <span className="contact-card__arrow">→</span>
         </a>
 
+        {site.links.portfolio && (
+          <a
+            href={site.links.portfolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-card"
+          >
+            <span className="contact-card__label">Portfolio</span>
+            <span className="contact-card__value">{portfolioHost}</span>
+            <span className="contact-card__arrow">→</span>
+          </a>
+        )}
+
         <a href={site.links.github} target="_blank" rel="noopener noreferrer" className="contact-card">
           <span className="contact-card__label">GitHub</span>
-          <span className="contact-card__value">@{site.links.github.split('/').pop()}</span>
+          <span className="contact-card__value">@stiano25</span>
           <span className="contact-card__arrow">→</span>
         </a>
 
@@ -63,7 +78,12 @@ const Contact = () => {
           <span className="contact-card__arrow">→</span>
         </a>
 
-        <a href={site.links.designPortfolio} target="_blank" rel="noopener noreferrer" className="contact-card">
+        <a
+          href={site.links.designPortfolio}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-card"
+        >
           <span className="contact-card__label">Design portfolio</span>
           <span className="contact-card__value">stiano369.vercel.app</span>
           <span className="contact-card__arrow">→</span>

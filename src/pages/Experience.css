@@ -1,7 +1,81 @@
+.experience__headline {
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.experience__contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  list-style: none;
+  margin-top: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.experience__contact a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+
+.experience__contact a:hover {
+  color: var(--color-text-muted);
+}
+
+.experience__objective {
+  margin-top: var(--space-4);
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-accent);
+  font-size: clamp(1rem, 1.8vw, 1.0625rem);
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 42rem;
+}
+
+.experience__section-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: var(--space-4);
+}
+
+.experience__section-title::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-right: var(--space-2);
+  vertical-align: middle;
+}
+
+.experience__edu-degree {
+  font-weight: 600;
+  color: var(--color-ink) !important;
+}
+
+.experience__edu-meta {
+  font-size: 0.8125rem;
+}
+
+.experience__aside-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
 .timeline {
   position: relative;
   padding-left: var(--space-4);
-  border-left: 2px solid var(--color-border);
+  border-left: 2px solid var(--color-border-strong);
 }
 
 .timeline__item {
@@ -20,8 +94,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-soft);
+  background: var(--color-ink);
+  box-shadow: 0 0 0 3px var(--color-surface-muted);
 }
 
 .timeline__period {
@@ -32,7 +106,7 @@
   text-transform: uppercase;
 }
 
-.timeline__content h2 {
+.timeline__content h3 {
   font-size: 1.2rem;
   margin: 0.35rem 0 0.15rem;
   letter-spacing: -0.02em;
@@ -42,18 +116,20 @@
 .timeline__org {
   color: var(--color-text-dim);
   font-size: 0.875rem;
+  font-weight: 500;
   margin-bottom: var(--space-2);
 }
 
-.timeline__story {
-  color: var(--color-text-muted);
-  line-height: 1.75;
-  margin-bottom: var(--space-2);
-  font-size: 0.9375rem;
-}
-
-.timeline__tags {
+.timeline__bullets {
+  margin: 0;
+  padding-left: 1.15rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.timeline__bullets li {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  font-size: 0.9375rem;
 }

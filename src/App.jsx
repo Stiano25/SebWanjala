@@ -6,8 +6,6 @@ import CaseStudy from './pages/CaseStudy'
 import About from './pages/About'
 import Process from './pages/Process'
 import Experience from './pages/Experience'
-import Blog from './pages/Blog'
-import BlogPost from './pages/BlogPost'
 import Contact from './pages/Contact'
 
 function App() {
@@ -21,8 +19,6 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="process" element={<Process />} />
           <Route path="experience" element={<Experience />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

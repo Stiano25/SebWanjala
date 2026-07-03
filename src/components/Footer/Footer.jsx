@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="footer__col footer__links">
           <a href={site.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href={site.links.designPortfolio} target="_blank" rel="noopener noreferrer">Design work</a>
+          <a href={site.links.portfolio} target="_blank" rel="noopener noreferrer">Portfolio</a>
           <Link to="/contact">Contact</Link>
         </div>
 

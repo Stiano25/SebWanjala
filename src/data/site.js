@@ -7,12 +7,13 @@ export const site = {
     'I move between Figma and React, turning ideas into interfaces people actually want to use. Apps, tools, portfolios, platforms — if it lives on the web and needs clarity, I want to build it.',
   location: 'Nairobi, Kenya',
   email: 'itsstiano25@gmail.com',
-  phone: '+254 754 493 845',
+  phone: '+254 769 972540',
   available: true,
   links: {
-    github: 'https://github.com/stiano369',
+    github: 'https://github.com/stiano25',
     linkedin: 'https://www.linkedin.com/in/sebastian-wanjala-194398415',
     designPortfolio: 'https://stiano369.vercel.app/',
+    portfolio: 'https://seb-wanjala.vercel.app',
   },
   skills: [
     'React',
