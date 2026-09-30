@@ -6,6 +6,12 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    // Poll for changes: file edits made outside the editor (e.g. synced or
+    // written by tools) don't always fire native watch events on Windows drives.
+    watch: {
+      usePolling: true,
+      interval: 300,
+    },
   },
   build: {
     rollupOptions: {

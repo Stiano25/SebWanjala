@@ -1,24 +1,22 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
-import './MainLayout.css'
+import Colophon from '../components/Colophon/Colophon'
+import CommandPalette from '../components/CommandPalette/CommandPalette'
+import { InteractionProvider } from '../context/Interaction'
 
 const MainLayout = () => {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (!hash) window.scrollTo(0, 0)
+  }, [pathname, hash])
 
   return (
-    <div className="layout">
-      <Header />
-      <main className="layout-main">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <InteractionProvider>
+      <Outlet />
+      {pathname !== '/' && <Colophon />}
+      <CommandPalette />
+    </InteractionProvider>
   )
 }
 

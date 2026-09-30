@@ -1,0 +1,287 @@
+.gate {
+  min-height: 100dvh;
+  max-width: 980px;
+  margin-inline: auto;
+  padding: clamp(2rem, 9vh, 6rem) 20px clamp(1.5rem, 5vh, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gate__hello {
+  max-width: 32ch;
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.gate__hello > span {
+  display: inline;
+}
+
+/* The question finishes the sentence, in the voice's quieter register */
+.gate__ask {
+  color: var(--fg-3);
+}
+
+.gate__paths {
+  list-style: none;
+  margin-top: clamp(1rem, 3vh, 1.75rem);
+  border-top: 1px solid var(--line);
+}
+
+.gate__paths li {
+  border-bottom: 1px solid var(--line);
+}
+
+.gate__path {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) auto auto;
+  grid-template-areas: 'key main meta arrow';
+  align-items: center;
+  column-gap: 0.75rem;
+  width: 100%;
+  padding: clamp(0.85rem, 2.2vh, 1.25rem) 0.5rem;
+  text-align: left;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 14px;
+  transition:
+    color 0.35s var(--ease),
+    padding 0.45s var(--ease);
+}
+
+/* Colour sweeps in from the left on hover / focus */
+.gate__fill {
+  position: absolute;
+  inset: 3px 0;
+  z-index: -1;
+  border-radius: 14px;
+  background: radial-gradient(120% 140% at 10% 0%, rgba(255, 255, 255, 0.28), transparent 55%), var(--c);
+  box-shadow: inset 0 -6px 14px rgba(0, 0, 0, 0.15);
+  clip-path: inset(0 100% 0 0 round 14px);
+  transition: clip-path 0.5s var(--ease);
+}
+
+.gate__path.is-on .gate__fill,
+.gate__path:focus-visible .gate__fill {
+  clip-path: inset(0 0 0 0 round 14px);
+}
+
+.gate__path.is-on,
+.gate__path:focus-visible {
+  color: #fff;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  outline: none;
+}
+
+.gate__key {
+  grid-area: key;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fg-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition:
+    color 0.3s,
+    box-shadow 0.3s;
+}
+
+.gate__path.is-on .gate__key,
+.gate__path:focus-visible .gate__key {
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.gate__main {
+  grid-area: main;
+  display: grid;
+  min-width: 0;
+}
+
+.gate__q {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: clamp(1.35rem, 3.4vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.gate__glyph {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.15em;
+  height: 1.15em;
+  padding: 0.17em;
+  border-radius: 0.3em;
+  color: #fff;
+  background: var(--c);
+  --glyph-bg: var(--c);
+  transition:
+    background 0.3s,
+    color 0.3s,
+    transform 0.45s var(--ease);
+}
+
+.gate__path.is-on .gate__glyph,
+.gate__path:focus-visible .gate__glyph {
+  color: var(--c);
+  background: #fff;
+  --glyph-bg: #fff;
+  transform: rotate(-6deg);
+}
+
+.gate__teaser {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  font-size: 15px;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.45s var(--ease),
+    opacity 0.3s,
+    margin 0.45s var(--ease);
+}
+
+.gate__teaser > span {
+  min-height: 0;
+}
+
+.gate__go {
+  font-weight: 500;
+}
+
+.gate__path.is-on .gate__teaser,
+.gate__path:focus-visible .gate__teaser {
+  grid-template-rows: 1fr;
+  opacity: 0.9;
+  margin-top: 0.35rem;
+}
+
+.gate__meta {
+  grid-area: meta;
+  display: flex;
+  gap: 0.6rem;
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--fg-2);
+  transition: color 0.3s;
+}
+
+.gate__time {
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  color: color-mix(in srgb, var(--c) 80%, var(--fg));
+  font-variant-numeric: tabular-nums;
+}
+
+.gate__path.is-on .gate__meta,
+.gate__path:focus-visible .gate__meta {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gate__path.is-on .gate__time,
+.gate__path:focus-visible .gate__time {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.gate__arrow {
+  grid-area: arrow;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition:
+    transform 0.4s var(--ease),
+    background 0.3s,
+    box-shadow 0.3s;
+}
+
+.gate__path.is-on .gate__arrow,
+.gate__path:focus-visible .gate__arrow {
+  transform: translateX(-4px) rotate(-45deg);
+  background: #fff;
+  color: var(--c);
+  box-shadow: none;
+}
+
+.gate__path:active {
+  transform: scale(0.99);
+}
+
+/* "Everything" sits quietly at the end */
+.gate__path--quiet .gate__glyph {
+  width: 1.45em;
+  height: 1.45em;
+  padding: 0.2em;
+}
+
+.gate__path--quiet .gate__q {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  color: var(--fg-2);
+}
+
+.gate__path--quiet.is-on .gate__q {
+  color: #fff;
+}
+
+.gate__hint {
+  margin-top: clamp(1rem, 3vh, 1.75rem);
+  font-size: 13px;
+  color: var(--fg-3);
+}
+
+.gate__flood {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.gate__flood-q {
+  color: #fff;
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .gate__path {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'main arrow'
+      'meta arrow';
+    row-gap: 0.35rem;
+    padding-inline: 0.25rem;
+  }
+
+  .gate__key {
+    display: none;
+  }
+
+  .gate__arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-height: 640px) {
+  .gate {
+    justify-content: flex-start;
+  }
+}

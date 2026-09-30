@@ -1,0 +1,42 @@
+.colophon {
+  margin-top: 6rem;
+  padding: 2rem 20px calc(2.5rem + env(safe-area-inset-bottom));
+}
+
+.colophon__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  max-width: 800px;
+  margin-inline: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.colophon__k {
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.colophon__k:hover {
+  color: var(--fg);
+}
+
+.clock__colon {
+  animation: blink 2s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@media (min-width: 720px) {
+  .colophon__inner {
+    padding-left: calc(140px + 2rem);
+    border-top: 0;
+  }
+}

@@ -1,0 +1,106 @@
+/* Keepy-uppy */
+.keepy__score {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.keepy__score b {
+  font-size: 20px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.keepy__stage {
+  position: relative;
+  height: 240px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.keepy__ball {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.keepy__ball svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.15));
+}
+
+.keepy__ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--line);
+}
+
+.keepy__msg {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  translate: -50% 0;
+  font-size: 14px;
+  color: var(--fg-3);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Arcade button */
+.arcade {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.arcade__btn {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: #1b1b19;
+  box-shadow:
+    0 10px 0 #000,
+    0 18px 24px -10px rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.arcade__btn:active {
+  box-shadow:
+    0 4px 0 #000,
+    0 8px 14px -8px rgba(0, 0, 0, 0.5);
+}
+
+.arcade__cap {
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  background: var(--lens, #ff5a1f);
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.18);
+}
+
+.arcade__line {
+  min-height: 1.5em;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .arcade__btn {
+    background: #2a2a27;
+  }
+}

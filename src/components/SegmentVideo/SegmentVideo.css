@@ -1,0 +1,55 @@
+.seg__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--media-bg);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.seg__frame video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.seg__toggle {
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.seg__frame:hover .seg__toggle,
+.seg__toggle:focus-visible {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .seg__toggle {
+    opacity: 1;
+  }
+}
+
+.seg__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.seg__bar i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: 0 50%;
+}

@@ -1,0 +1,311 @@
+.glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.glyph * {
+  transform-box: fill-box;
+}
+
+.g-soft {
+  fill: color-mix(in srgb, currentColor 16%, transparent);
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .glyph {
+  --go: 1;
+}
+
+/* Frontend: cursor slides in and clicks, button presses */
+.g-front__cursor {
+  transform-origin: 0 0;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.g-front__btn {
+  transform-origin: center;
+  opacity: 0.85;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-front__cursor {
+  animation: g-click 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-front__btn {
+  animation: g-press 1.4s ease infinite;
+}
+
+@keyframes g-click {
+  0% {
+    transform: translate(8px, 6px);
+  }
+  40%,
+  100% {
+    transform: translate(-4px, -3px);
+  }
+  50% {
+    transform: translate(-4px, -3px) scale(0.85);
+  }
+  60% {
+    transform: translate(-4px, -3px) scale(1);
+  }
+}
+
+@keyframes g-press {
+  0%,
+  45% {
+    transform: scale(1);
+  }
+  52% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  65%,
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Full-stack: a dot travels down to the database */
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-full__dot {
+  animation: g-drop 1.6s cubic-bezier(0.5, 0, 0.3, 1) infinite;
+}
+
+@keyframes g-drop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(14.5px);
+  }
+  85% {
+    transform: translateY(26px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(28px);
+    opacity: 0;
+  }
+}
+
+/* Design: the curve draws itself, the pen follows */
+.g-design__curve {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-design__curve {
+  animation: g-draw 1.8s ease-in-out infinite;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-design__pen {
+  animation: g-wiggle 1.8s ease-in-out infinite;
+}
+
+@keyframes g-draw {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  70%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes g-wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  35% {
+    transform: rotate(-10deg) translate(-1px, 2px);
+  }
+  70% {
+    transform: rotate(6deg);
+  }
+}
+
+/* Launch: the live signal pulses */
+.g-live__wave {
+  opacity: 0.35;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-live__wave--1 {
+  animation: g-wave 1.2s ease-out infinite;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-live__wave--2 {
+  animation: g-wave 1.2s ease-out 0.2s infinite;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-live__dot {
+  animation: g-pop 1.2s ease-out infinite;
+}
+
+@keyframes g-wave {
+  0% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes g-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.35);
+  }
+}
+
+/* IT: plug in, light on */
+.g-it__plug {
+  transform: translateX(-5px);
+  transition: transform 0.4s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.g-it__led {
+  opacity: 0.25;
+  transition: opacity 0.3s 0.2s;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-it__plug {
+  transform: translateX(3px);
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-it__led {
+  opacity: 1;
+  animation: g-blink 1s steps(2) 0.4s infinite;
+}
+
+@keyframes g-blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Hire: the stamp lands */
+.g-hire__stamp {
+  transform-origin: center;
+  transform: scale(0.8) rotate(-12deg);
+  opacity: 0.9;
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-hire__stamp {
+  animation: g-stamp 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
+@keyframes g-stamp {
+  0% {
+    transform: scale(1.7) rotate(-25deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+/* Client: blocks pop into the blueprint */
+.g-client__b {
+  transform-origin: center;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-client__b {
+  animation: g-block 0.5s cubic-bezier(0.3, 1.5, 0.5, 1) both;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-client__b--2 {
+  animation-delay: 0.1s;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-client__b--3 {
+  animation-delay: 0.2s;
+}
+
+@keyframes g-block {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Dev: the spring squashes and the ball bounces */
+.g-dev__spring {
+  transform-origin: 50% 0;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-dev__spring {
+  animation: g-spring 0.9s cubic-bezier(0.4, 0, 0.3, 1.4) infinite;
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-dev__ball {
+  animation: g-bounce 0.9s cubic-bezier(0.4, 0, 0.3, 1.4) infinite;
+}
+
+@keyframes g-spring {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.6);
+  }
+}
+
+@keyframes g-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* All: the cards fan out */
+.g-all__c {
+  transform-origin: 50% 100%;
+  transition: transform 0.45s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.g-all__c--1 {
+  transform: rotate(-6deg);
+}
+
+.g-all__c--2 {
+  transform: rotate(-2deg);
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-all__c--1 {
+  transform: rotate(-22deg) translateX(-3px);
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-all__c--2 {
+  transform: rotate(-10deg);
+}
+
+.glyph-host:is(:hover, :focus-visible, .is-on) .g-all__c--3 {
+  transform: rotate(8deg) translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glyph *,
+  .glyph-host .glyph * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

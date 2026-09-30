@@ -1,0 +1,91 @@
+.pathbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.pathbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 10px 20px;
+}
+
+.pathbar__name {
+  flex: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pathbar__paths {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pathbar__paths::-webkit-scrollbar {
+  display: none;
+}
+
+.pathbar__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 34px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--fg-2);
+  white-space: nowrap;
+  isolation: isolate;
+  transition: color 0.25s;
+}
+
+.pathbar__link:hover {
+  color: var(--fg);
+}
+
+.pathbar__link.is-on {
+  color: var(--bg);
+}
+
+.pathbar__pill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 999px;
+  background: var(--fg);
+}
+
+.pathbar__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c);
+}
+
+@media (max-width: 560px) {
+  .pathbar__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 8px 12px 8px;
+  }
+
+  .pathbar__name {
+    padding-left: 4px;
+  }
+
+  .pathbar__link {
+    padding: 0 0.6rem;
+  }
+}

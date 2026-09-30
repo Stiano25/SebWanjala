@@ -1,10 +1,10 @@
 export const site = {
   name: 'Sebastian Wanjala',
-  role: 'Frontend developer who designs',
+  role: 'Software developer',
   rotatingRoles: ['software developer', 'graphic designer'],
   tagline: 'I design and build web products — from tools and platforms to brand-forward interfaces.',
   thread:
-    'I move between Figma and React, turning ideas into interfaces people actually want to use. Apps, tools, portfolios, platforms — if it lives on the web and needs clarity, I want to build it.',
+    'I build working products people actually need, and sweat the experience until it feels right. Apps, tools, portfolios, platforms — if it lives on the web and needs clarity, I want to build it.',
   location: 'Nairobi, Kenya',
   email: 'itsstiano25@gmail.com',
   phone: '+254 769 972540',
@@ -19,7 +19,6 @@ export const site = {
     'React',
     'JavaScript',
     'TypeScript',
-    'Figma',
     'CSS',
     'Node.js',
     'Framer Motion',
@@ -29,7 +28,6 @@ export const site = {
   ],
   marqueeSkills: [
     'React',
-    'Figma',
     'Web Apps',
     'UI Design',
     'Frontend',
