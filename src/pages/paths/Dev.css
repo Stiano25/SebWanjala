@@ -1,0 +1,500 @@
+/* Small objects you can poke. One accent colour, flat fills. */
+.devlab {
+  display: grid;
+  gap: 16px;
+}
+
+.lab {
+  padding: 1.25rem;
+  border-radius: 28px;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.lab__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.lab__head h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.lab__n {
+  font-size: 12px;
+  color: var(--c);
+}
+
+.lab__stage {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.25rem;
+  min-height: 190px;
+  border-radius: 20px;
+  background: var(--hover);
+}
+
+.clay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: transform 0.18s var(--ease);
+}
+
+.clay-btn:hover {
+  transform: translateY(-2px);
+}
+
+.clay-btn:active {
+  transform: translateY(1px) scale(0.95);
+}
+
+.clay-btn:disabled {
+  opacity: 0.45;
+  transform: none;
+}
+
+.lab__reset {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--fg-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+/* Basket */
+.bk__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bk__zone {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 150px;
+}
+
+.bk__drop {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--c);
+}
+
+.bk__basket {
+  position: relative;
+  width: 120px;
+  height: 84px;
+  margin-top: 40px;
+  transform-origin: 50% 100%;
+}
+
+.bk__handle {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: -34px;
+  height: 50px;
+  border: 7px solid var(--fg);
+  border-bottom: 0;
+  border-radius: 40px 40px 0 0;
+}
+
+.bk__body {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 10px 10px 30px 30px;
+  background: var(--c);
+}
+
+.bk__badge {
+  position: absolute;
+  z-index: 4;
+  right: -10px;
+  top: -12px;
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--fg);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+
+.bk__zone .lab__reset {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* Bin */
+.bin__files {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.bin__file {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.55rem 0.55rem 0.9rem;
+  border-radius: 14px;
+  font-size: 14px;
+  background: var(--bg);
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    0 6px 12px -10px rgba(0, 0, 0, 0.3);
+}
+
+.bin__file button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: #d9480f;
+}
+
+.bin__file button:hover {
+  background: rgba(217, 72, 15, 0.08);
+}
+
+.bin__empty {
+  padding: 0.75rem 0;
+  font-size: 14px;
+  color: var(--fg-3);
+}
+
+.bin__side {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+}
+
+.bin {
+  position: relative;
+  width: 76px;
+  height: 92px;
+}
+
+.bin__lid {
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: 0;
+  height: 14px;
+  border-radius: 8px;
+  background: var(--fg);
+  transform-origin: 8% 100%;
+  transition: transform 0.35s var(--ease);
+}
+
+.bin__lid.is-open {
+  transform: rotate(var(--lid, -38deg)) translateY(-4px);
+}
+
+.bin__can {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 16px;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 6px 6px 18px 18px;
+  background: var(--fg-2);
+}
+
+.bin__can b {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Door */
+.door__form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.door__form label {
+  font-size: 13px;
+  color: var(--fg-2);
+}
+
+.door__form input {
+  min-height: 46px;
+  padding: 0 0.9rem;
+  border: 0;
+  border-radius: 14px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--fg);
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.door__form input:focus {
+  outline: 2px solid var(--c);
+}
+
+.door__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.door__msg {
+  min-height: 1.5em;
+  font-size: 14px;
+  color: #d9480f;
+}
+
+.door__msg.is-ok {
+  color: var(--ok);
+}
+
+.door__frame {
+  position: relative;
+  justify-self: center;
+  width: 110px;
+  height: 160px;
+  border-radius: 56px 56px 8px 8px;
+  background: var(--fg);
+  perspective: 500px;
+  box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.door {
+  position: absolute;
+  inset: 6px 6px 0;
+  border-radius: 50px 50px 4px 4px;
+  background: var(--c);
+  transform-origin: 0% 50%;
+  transition: transform 0.8s var(--ease);
+}
+
+.door.is-open {
+  transform: rotateY(-72deg);
+}
+
+.door__knob {
+  position: absolute;
+  right: 12px;
+  top: 52%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.door__light {
+  position: absolute;
+  right: -22px;
+  top: 40%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.door__light.is-bad {
+  background: #e5484d;
+  box-shadow:
+    0 0 0 4px var(--bg),
+    0 0 12px #e5484d;
+}
+
+.door__light.is-ok {
+  background: #30a46c;
+  box-shadow:
+    0 0 0 4px var(--bg),
+    0 0 12px #30a46c;
+}
+
+/* Tweak panel */
+.tweak {
+  margin-top: 0.9rem;
+}
+
+.tweak__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--c);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--c) 45%, transparent);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.tweak__btn:hover,
+.tweak.is-open .tweak__btn {
+  color: #fff;
+  background: var(--c);
+}
+
+.tweak__body {
+  overflow: hidden;
+}
+
+.tweak__grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 760px) {
+  .tweak__grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+}
+
+.tweak__sliders {
+  display: grid;
+  gap: 1rem;
+}
+
+.tweak__row {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 14px;
+}
+
+.tweak__row span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweak__row b {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--c);
+}
+
+.tweak__row input[type='range'] {
+  width: 100%;
+  accent-color: var(--c);
+  height: 28px;
+}
+
+.tweak__row small {
+  font-size: 12.5px;
+  color: var(--fg-3);
+}
+
+.tweak__reset {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 13px;
+  color: var(--fg-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--fg-3);
+}
+
+.tweak__code {
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  background: #161615;
+  color: #e9e7df;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.tweak__notes {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1rem 0 0.25rem;
+  padding-left: 1.1rem;
+  font-size: 14px;
+  color: var(--fg-2);
+}
+
+/* Rules */
+.rules {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.rules li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.rules__n {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--c);
+}
+
+.rules b {
+  font-weight: 500;
+}
+
+.rules p {
+  margin-top: 0.15rem;
+  font-size: 14px;
+  color: var(--fg-2);
+}
+
+@media (min-width: 760px) {
+  .lab__stage--basket,
+  .lab__stage--bin,
+  .lab__stage--door {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .rules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

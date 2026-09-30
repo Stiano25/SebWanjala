@@ -1,0 +1,242 @@
+/* Design matters demo */
+.dm {
+  container-type: inline-size;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 24px;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.dm__switch {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--hover);
+}
+
+.dm__switch button {
+  position: relative;
+  min-height: 40px;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  font-size: 15px;
+  color: var(--fg-2);
+  isolation: isolate;
+}
+
+.dm__switch button.is-on {
+  color: var(--fg);
+}
+
+.dm__pill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 999px;
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.dm__body {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.dm__stage {
+  perspective: 800px;
+}
+
+.dm__note {
+  margin-top: 0.6rem;
+  font-size: 13px;
+  color: var(--fg-3);
+}
+
+.dm__lead {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.dm__notes ul {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-left: 1.1rem;
+  color: var(--fg-2);
+}
+
+@container (min-width: 640px) {
+  .dm__body {
+    grid-template-columns: minmax(0, 380px) 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+/* The two forms */
+.bk {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.bk--plain {
+  border-radius: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  gap: 0.5rem;
+}
+
+.bk__plainTitle {
+  font-weight: 700;
+}
+
+.bk--plain label {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.bk--plain input {
+  height: 30px;
+  padding: 0 6px;
+  border: 1px solid #999;
+  border-radius: 0;
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.bk__plainBtn {
+  justify-self: start;
+  height: 30px;
+  padding: 0 14px;
+  border: 1px solid #777;
+  background: #e9e9e9;
+  color: #111;
+  font: inherit;
+}
+
+.bk__plainErr {
+  color: #d00;
+}
+
+.bk__name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.bk__sub {
+  font-size: 14px;
+  color: var(--fg-2);
+}
+
+.bk__q {
+  margin-top: 0.4rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bk__dates {
+  display: flex;
+  gap: 6px;
+}
+
+.bk__dates button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.bk__dates button.is-on {
+  background: var(--fg);
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.bk__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-self: start;
+  padding: 3px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.bk__step button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.bk__step button:hover {
+  background: var(--hover);
+}
+
+.bk__step output {
+  min-width: 2ch;
+  text-align: center;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bk__phone {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.bk__phone.is-bad {
+  box-shadow: inset 0 0 0 1.5px #d9480f;
+}
+
+.bk__phone span {
+  padding: 0 0.6rem 0 0.8rem;
+  color: var(--fg-2);
+  border-right: 1px solid var(--line);
+}
+
+.bk__phone input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 0.7rem;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  color: var(--fg);
+  outline: none;
+}
+
+.bk__go {
+  min-height: 48px;
+  margin-top: 0.4rem;
+  border-radius: 12px;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--fg);
+}
+
+.bk__msg {
+  min-height: 1.4em;
+  font-size: 14px;
+  color: #d9480f;
+}
+
+.bk__msg.is-ok {
+  color: var(--ok);
+}

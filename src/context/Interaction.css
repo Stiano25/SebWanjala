@@ -1,0 +1,31 @@
+.toast-region {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  z-index: 3000;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem 0.5rem 0.6rem;
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: 999px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.35);
+}
+
+.toast__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ok);
+  color: #fff;
+}

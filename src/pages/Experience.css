@@ -1,10 +1,9 @@
 .experience__headline {
   margin-top: var(--space-2);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--color-accent);
 }
 
 .experience__contact {
@@ -39,22 +38,8 @@
 }
 
 .experience__section-title {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-text-dim);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   margin-bottom: var(--space-4);
-}
-
-.experience__section-title::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 2px;
-  background: var(--color-accent);
-  margin-right: var(--space-2);
-  vertical-align: middle;
 }
 
 .experience__edu-degree {
@@ -94,20 +79,18 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-ink);
-  box-shadow: 0 0 0 3px var(--color-surface-muted);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-bg);
 }
 
 .timeline__period {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-text-dim);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-accent);
 }
 
 .timeline__content h3 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin: 0.35rem 0 0.15rem;
   letter-spacing: -0.02em;
   color: var(--color-ink);

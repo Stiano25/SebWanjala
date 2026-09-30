@@ -1,5 +1,5 @@
 export const experienceProfile = {
-  headline: 'Software Developer | Graphic Designer',
+  headline: 'Software Developer',
   objective:
     'Recent graduate in Software Development with a strong interest in frontend development and UI/UX design. Proficient in React, JavaScript, and Adobe tools — aiming to contribute to modern web projects that prioritize both functionality and design quality.',
   education: {
@@ -27,13 +27,13 @@ export const experienceProfile = {
 export const experience = [
   {
     id: 1,
-    period: 'May 2026 — Present',
+    period: 'May 2026 — Aug 2026',
     title: 'IT Intern',
     org: 'Mizizi Elimu Afrika',
     bullets: [
-      'Provide technical support and troubleshoot hardware and software issues across the organisation.',
-      'Assist with the setup, configuration, and maintenance of IT systems and network infrastructure.',
-      'Support digital operations and contribute to internal technology initiatives.',
+      'Provided technical support, diagnosing and fixing hardware and software issues across the organisation.',
+      'Set up, configured and maintained IT systems and network infrastructure.',
+      'Supported digital operations and contributed to internal technology initiatives.',
     ],
   },
   {
@@ -42,9 +42,9 @@ export const experience = [
     title: 'Freelance Web Developer',
     org: 'Self-employed',
     bullets: [
-      'Designed and developed 3 fully functional websites for clients that are live and generating revenue.',
-      'Handled end-to-end delivery: client communication, UI/UX design, development, and deployment.',
-      'Built responsive, modern interfaces using React and JavaScript with clean, maintainable code.',
+      'Designed and built three websites for clients that are live and generating revenue.',
+      'Owned delivery end to end: client communication, UI/UX design, development and deployment.',
+      'Built responsive interfaces in React and JavaScript with clean, maintainable code.',
     ],
   },
   {
@@ -53,9 +53,9 @@ export const experience = [
     title: 'Frontend Developer (Remote)',
     org: 'Clobiz Tech Limited',
     bullets: [
-      'Made appealing UIs for different clients which were beautiful and simple.',
-      'Created a better user experience which was easy to use for the clients.',
-      'Used few lines of code which was easy for other developers to collaborate.',
+      'Designed and built clear, attractive interfaces for a range of client projects.',
+      'Simplified flows so that our clients’ users could get things done easily.',
+      'Kept code concise and readable, so other developers could pick it up and collaborate.',
     ],
   },
   {
@@ -64,29 +64,8 @@ export const experience = [
     title: 'Industrial Attachment',
     org: 'TIFA Research',
     bullets: [
-      'Set up computers and configured systems for callers to ensure smooth operations.',
-      'Assisted in coding and troubleshooting to restore systems during downtime.',
-    ],
-  },
-  {
-    id: 5,
-    period: 'Jan 2024 — Apr 2025',
-    title: 'Graphic Designer',
-    org: 'Highrise FC',
-    bullets: [
-      'Increased fan interaction by 20% on Facebook.',
-      'Created visually appealing graphics for social media and promotional materials.',
-      'Designed team branding, kits, and posters to enhance club visibility.',
-    ],
-  },
-  {
-    id: 6,
-    period: 'Mar 2024 — Mar 2025',
-    title: 'Part-time Graphic Designer',
-    org: 'Samburu Pirates FC',
-    bullets: [
-      'Created visually appealing graphics for social media and promotional materials.',
-      'Designed team branding, kits, and posters to enhance club visibility.',
+      'Set up and configured computers and systems for the call team to keep operations running smoothly.',
+      'Helped with coding and troubleshooting to restore systems during downtime.',
     ],
   },
   {
@@ -95,9 +74,9 @@ export const experience = [
     title: 'IT Consultant',
     org: 'Golden Springs Academy',
     bullets: [
-      'Assisted in setting up and maintaining computer systems and network.',
-      "Supported the school's marketing team with digital content creation.",
-      'Created a management system that saw the school maintain their records with ease.',
+      'Built a management system that made it easy for the school to keep its records.',
+      'Set up and maintained the school’s computer systems and network.',
+      'Supported the marketing team with digital content.',
     ],
   },
 ]

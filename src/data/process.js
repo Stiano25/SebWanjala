@@ -9,7 +9,7 @@ export const processSteps = [
     step: '02',
     title: 'Shape',
     story:
-      'I translate messy reality into clear flows in Figma. Hierarchy, type, and spacing do the heavy lifting. I prototype early because static mockups lie about how something feels.',
+      'I translate messy reality into clear flows and quick prototypes. Hierarchy, type, and spacing do the heavy lifting. I prototype early because static mockups lie about how something feels.',
   },
   {
     step: '03',
