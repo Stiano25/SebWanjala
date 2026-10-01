@@ -11,18 +11,11 @@ export const cv = {
   ],
   summary:
     'Software developer who builds working products people actually need, and cares just as much about how they feel to use. I design and build end to end — from the first conversation with a client to a live, deployed product — mostly in React and JavaScript.',
+  // Grouped so development work leads; IT roles follow.
+  groups: { dev: 'Software development', it: 'IT & systems' },
   experience: [
     {
-      role: 'IT Intern',
-      org: 'Mizizi Elimu Afrika',
-      period: 'May 2026 – Aug 2026',
-      points: [
-        'Provided technical support, diagnosing and fixing hardware and software issues across the organisation.',
-        'Set up, configured and maintained IT systems and network infrastructure.',
-        'Supported digital operations and contributed to internal technology initiatives.',
-      ],
-    },
-    {
+      group: 'dev',
       role: 'Freelance Web Developer',
       org: 'Self-employed',
       period: 'Jan 2026 – May 2026',
@@ -33,6 +26,7 @@ export const cv = {
       ],
     },
     {
+      group: 'dev',
       role: 'Frontend Developer (Remote)',
       org: 'Clobiz Tech Limited',
       period: 'Jan 2025 – Dec 2025',
@@ -43,6 +37,18 @@ export const cv = {
       ],
     },
     {
+      group: 'it',
+      role: 'IT Intern',
+      org: 'Mizizi Elimu Afrika',
+      period: 'May 2026 – Aug 2026',
+      points: [
+        'Provided technical support, diagnosing and fixing hardware and software issues across the organisation.',
+        'Set up, configured and maintained IT systems and network infrastructure.',
+        'Supported digital operations and contributed to internal technology initiatives.',
+      ],
+    },
+    {
+      group: 'it',
       role: 'Industrial Attachment',
       org: 'TIFA Research',
       period: 'Apr 2025 – Aug 2025',
@@ -52,6 +58,7 @@ export const cv = {
       ],
     },
     {
+      group: 'it',
       role: 'IT Consultant',
       org: 'Golden Springs Academy',
       period: 'Oct 2021 – Apr 2023',

@@ -62,7 +62,7 @@ export const bio = [
   },
   {
     keys: ['hiring'],
-    parts: ['Most recently I was an IT intern at ', { pill: 'Mizizi Elimu Afrika' }, ', until August 2026.'],
+    parts: ['I’ve also done IT and systems work, most recently at ', { pill: 'Mizizi Elimu Afrika' }, '.'],
   },
   {
     keys: ['all', 'curious'],
