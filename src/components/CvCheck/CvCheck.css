@@ -154,6 +154,17 @@
   color: #d9480f;
 }
 
+.cvs__group {
+  margin: 0.9rem 0 0.1rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b6a66;
+}
+
+.cvs__job.is-first {
+  border-top: 0 !important;
+}
+
 .cvs__job + .cvs__job {
   border-top: 1px dashed #ebe7de;
 }

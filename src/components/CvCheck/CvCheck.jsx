@@ -9,8 +9,8 @@ import './CvCheck.css'
 const RECEIPT = [
   ['Name', cv.name],
   ['Role', cv.title],
-  ['Latest', 'Mizizi Elimu Afrika'],
-  ['Before', 'Clobiz Tech'],
+  ['Latest', 'Freelance developer'],
+  ['Before', 'Clobiz Tech (remote)'],
   ['Degree', 'BSc Software Dev'],
   ['Based', 'Nairobi, Kenya'],
   ['Status', 'Open to roles'],
@@ -20,7 +20,7 @@ const HOLD_MS = 700
 
 /** The CV itself — the same content as the PDF, but every link works. */
 const Sheet = ({ onClose }) => {
-  const [open, setOpen] = useState(() => new Set([0, 1, 2]))
+  const [open, setOpen] = useState(() => new Set([0, 1]))
   const toggle = (i) =>
     setOpen((o) => {
       const n = new Set(o)
@@ -81,8 +81,10 @@ const Sheet = ({ onClose }) => {
           <h3>Experience</h3>
           {cv.experience.map((j, i) => {
             const on = open.has(i)
+            const head = i === 0 || cv.experience[i - 1].group !== j.group
             return (
-              <div key={j.org} className={`cvs__job ${on ? 'is-open' : ''}`}>
+              <div key={j.org} className={`cvs__job ${on ? 'is-open' : ''} ${head ? 'is-first' : ''}`}>
+                {head && <p className="cvs__group">{cv.groups[j.group]}</p>}
                 <button type="button" className="cvs__jobhead" aria-expanded={on} onClick={() => toggle(i)}>
                   <span>
                     <b>{j.role}</b> <span className="cvs__org">· {j.org}</span>

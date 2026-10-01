@@ -449,3 +449,13 @@
     grid-column: 2;
   }
 }
+
+.xp__group {
+  padding: 1.25rem 0 0.4rem;
+  font-size: 13px;
+  color: var(--fg-3);
+}
+
+.rows > li:first-child .xp__group {
+  padding-top: 0;
+}

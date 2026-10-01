@@ -26,21 +26,11 @@ export const experienceProfile = {
 
 export const experience = [
   {
-    id: 1,
-    period: 'May 2026 — Aug 2026',
-    title: 'IT Intern',
-    org: 'Mizizi Elimu Afrika',
-    bullets: [
-      'Provided technical support, diagnosing and fixing hardware and software issues across the organisation.',
-      'Set up, configured and maintained IT systems and network infrastructure.',
-      'Supported digital operations and contributed to internal technology initiatives.',
-    ],
-  },
-  {
     id: 2,
     period: 'Jan 2026 — May 2026',
     title: 'Freelance Web Developer',
     org: 'Self-employed',
+    group: 'dev',
     bullets: [
       'Designed and built three websites for clients that are live and generating revenue.',
       'Owned delivery end to end: client communication, UI/UX design, development and deployment.',
@@ -52,6 +42,7 @@ export const experience = [
     period: 'Jan 2025 — Dec 2025',
     title: 'Frontend Developer (Remote)',
     org: 'Clobiz Tech Limited',
+    group: 'dev',
     bullets: [
       'Designed and built clear, attractive interfaces for a range of client projects.',
       'Simplified flows so that our clients’ users could get things done easily.',
@@ -59,10 +50,23 @@ export const experience = [
     ],
   },
   {
+    id: 1,
+    period: 'May 2026 — Aug 2026',
+    title: 'IT Intern',
+    org: 'Mizizi Elimu Afrika',
+    group: 'it',
+    bullets: [
+      'Provided technical support, diagnosing and fixing hardware and software issues across the organisation.',
+      'Set up, configured and maintained IT systems and network infrastructure.',
+      'Supported digital operations and contributed to internal technology initiatives.',
+    ],
+  },
+  {
     id: 4,
     period: 'Apr 2025 — Aug 2025',
     title: 'Industrial Attachment',
     org: 'TIFA Research',
+    group: 'it',
     bullets: [
       'Set up and configured computers and systems for the call team to keep operations running smoothly.',
       'Helped with coding and troubleshooting to restore systems during downtime.',
@@ -73,6 +77,7 @@ export const experience = [
     period: 'Oct 2021 — Apr 2023',
     title: 'IT Consultant',
     org: 'Golden Springs Academy',
+    group: 'it',
     bullets: [
       'Built a management system that made it easy for the school to keep its records.',
       'Set up and maintained the school’s computer systems and network.',

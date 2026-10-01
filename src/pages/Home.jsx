@@ -125,8 +125,8 @@ const Home = () => {
               <a href="https://srannalifamily.com" target="_blank" rel="noopener noreferrer">
                 Srannali Family
               </a>{' '}
-              (a family’s memorial website). After that came an IT internship at Mizizi Elimu Afrika, which wrapped up
-              in August.
+              (a family’s memorial website). Alongside the code I’ve done IT and systems work too, most recently an
+              internship at Mizizi Elimu Afrika that wrapped up in August.
             </p>
             <p>
               These days I’m building <Link to="/work/attend-ui">Attend UI</Link>, a React library where interface
@@ -169,8 +169,11 @@ const Home = () => {
 
         <Section id="experience" title="Where I’ve worked">
           <ul className="rows">
-            {experience.map((r) => (
+            {experience.map((r, i) => (
               <li key={r.id}>
+                {(i === 0 || experience[i - 1].group !== r.group) && (
+                  <p className="xp__group">{r.group === 'dev' ? 'Software development' : 'IT & systems'}</p>
+                )}
                 <details className="xp">
                   <summary className="row row--xp">
                     <span className="row__title">
